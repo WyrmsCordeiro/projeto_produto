@@ -20,7 +20,7 @@ export function main(){
         console.log("                                                     ");
         console.log("*****************************************************");
 
-        console.log("Digite com a opção desejada: ");
+        console.log("Digite a opção desejada: ");
         opcao = readlinesync.questionInt("");
 
         if (opcao == 6){
