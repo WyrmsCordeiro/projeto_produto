@@ -1,8 +1,12 @@
 import readlinesync = require('readline-sync');
+import { Produto }  from './src/model/Produto';
+import { ProdutoFisico } from './src/model/ProdutoFisico';
 
 export function main(){
 
+
     let opcao: number;
+
 
     while (true){
 
@@ -65,6 +69,12 @@ export function sobre(): void{
     console.log("Generation Brasil - wyrmsc@genstudents.org");
     console.log("https://github.com/WyrmsCordeiro");
     console.log("*********************************************************");
+
+}
+
+function keyPress(): void {
+    console.log("\nPressione enter para continuar...");
+    readlinesync.prompt();
 
 }
 
