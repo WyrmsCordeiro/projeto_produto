@@ -1,0 +1,59 @@
+{
+  "compilerOptions": {
+    // "module": "nodenext": Especifica que o TypeScript deve gerar cÃ³digo compatÃ­vel com os mÃ³dulos ES mais recentes do Node.js.
+    // Isso permite o uso de import/export e outras funcionalidades modernas do JavaScript.
+    "module": "nodenext",
+
+    // "target": "esnext": Define a versÃ£o do JavaScript que o TypeScript irÃ¡ compilar. 
+    // "esnext" significa a versÃ£o mais recente e moderna do JavaScript, garantindo acesso Ã s Ãºltimas funcionalidades da linguagem.
+    "target": "esnext",
+
+    // "types": ["node"]: Inclui as definiÃ§Ãµes de tipo para o ambiente Node.js.
+    // Essencial para que o TypeScript entenda variÃ¡veis globais e mÃ³dulos nativos do Node.js, como 'require' e 'process'.
+    "types": ["node"],
+
+    // "sourceMap": true: Gera arquivos .map que mapeiam o cÃ³digo compilado de volta para o cÃ³digo-fonte original em TypeScript.
+    // Extremamente Ãºtil para depuraÃ§Ã£o, permitindo que vocÃª veja seu cÃ³digo TypeScript no debugger do navegador ou do Node.js.
+    "sourceMap": true,
+
+    // "declaration": true: Gera arquivos de declaraÃ§Ã£o .d.ts para o seu cÃ³digo TypeScript.
+    // Estes arquivos descrevem os tipos do seu cÃ³digo, permitindo que outros projetos TypeScript o utilizem com seguranÃ§a de tipo.
+    "declaration": true,
+
+    // "declarationMap": true: Cria source maps para os arquivos de declaraÃ§Ã£o .d.ts.
+    // Facilita a navegaÃ§Ã£o do cÃ³digo-fonte original para os tipos declarados quando se utiliza 'Go to Definition' em editores de cÃ³digo.
+    "declarationMap": true,
+
+    // "noUncheckedIndexedAccess": true: Adiciona 'undefined' a qualquer tipo acessado por um Ã­ndice que nÃ£o tenha uma verificaÃ§Ã£o explÃ­cita.
+    // Aumenta a seguranÃ§a ao forÃ§ar a verificaÃ§Ã£o de que um elemento de array ou propriedade de objeto realmente existe antes de usÃ¡-lo.
+    "noUncheckedIndexedAccess": true,
+
+    // "exactOptionalPropertyTypes": true: ForÃ§a o TypeScript a ser mais rigoroso com propriedades opcionais.
+    // Impede que 'undefined' seja atribuÃ­do a uma propriedade opcional, a menos que seja explicitamente declarado no tipo.
+    "exactOptionalPropertyTypes": true,
+
+    // "strict": true: Habilita um conjunto de verificaÃ§Ãµes de tipo rigorosas para um cÃ³digo mais seguro e robusto.
+    // Inclui verificaÃ§Ãµes como 'noImplicitAny', 'strictNullChecks', entre outras, prevenindo muitos erros comuns.
+    "strict": true,
+
+    // "verbatimModuleSyntax": false: Controla como as importaÃ§Ãµes e exportaÃ§Ãµes sÃ£o tratadas.
+    // 'false' permite que o compilador infira se uma importaÃ§Ã£o Ã© de tipo ou de valor, o que pode ser menos explÃ­cito.
+    "verbatimModuleSyntax": false,
+
+    // "isolatedModules": true: Garante que cada arquivo possa ser compilado de forma independente, sem depender de outras importaÃ§Ãµes.
+    // Ã‰ um prÃ©-requisito para algumas ferramentas de build e transpilers como o Babel.
+    "isolatedModules": true,
+
+    // "noUncheckedSideEffectImports": true: Ajuda a otimizar o 'tree-shaking' (remoÃ§Ã£o de cÃ³digo nÃ£o utilizado).
+    // Exige que importaÃ§Ãµes feitas apenas por seus efeitos colaterais (side effects) sejam explicitamente marcadas.
+    "noUncheckedSideEffectImports": true,
+
+    // "moduleDetection": "force": ForÃ§a o TypeScript a tratar cada arquivo como um mÃ³dulo, mesmo que nÃ£o tenha import/export.
+    // Garante que todos os arquivos tenham seu prÃ³prio escopo, evitando conflitos de variÃ¡veis globais.
+    "moduleDetection": "force",
+
+    // "skipLibCheck": true: Pula a verificaÃ§Ã£o de tipos em arquivos de declaraÃ§Ã£o de bibliotecas (.d.ts).
+    // Acelera a compilaÃ§Ã£o, especialmente em projetos com muitas dependÃªncias.
+    "skipLibCheck": true
+  }
+}
