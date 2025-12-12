@@ -13,16 +13,17 @@ export function main(){
         console.log("                                                     ");
         console.log("           1 - Criar cadastro                        ");
         console.log("           2 - Listar todas os produtos              ");
-        console.log("           3 - Atualizar produto                     ");
-        console.log("           4 - Deletar produto                       ");
-        console.log("           5 - Sair                                  ");
+        console.log("           3 - Buscar produto                        ")
+        console.log("           4 - Atualizar produto                     ");
+        console.log("           5 - Deletar produto                       ");
+        console.log("           6 - Sair                                  ");
         console.log("                                                     ");
         console.log("*****************************************************");
 
         console.log("Digite com a opção desejada: ");
         opcao = readlinesync.questionInt("");
 
-        if (opcao == 5){
+        if (opcao == 6){
             console.log("\nLOJA POWER JOGOS - Toda sua infância aqui!");
             sobre();
             process.exit(0);
@@ -39,12 +40,16 @@ export function main(){
                  break;
 
             case 3:
-                 console.log("\n\nAtualizar produto\n\n");
+                 console.log("\n\nBuscar produto\n\n");
                  break;     
 
             case 4:
+                 console.log("\n\nAtualizar produto\n\n");
+                 break;   
+
+            case 5:
                  console.log("\n\nDeletar produto\n\n");
-                 break;     
+                 break;   
 
             default:
                  console.log("\nTente novamente! Digite uma opção válida!\n");
