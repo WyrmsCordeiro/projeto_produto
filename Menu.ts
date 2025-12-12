@@ -1,12 +1,16 @@
 import readlinesync = require('readline-sync');
 import { Produto }  from './src/model/Produto';
 import { ProdutoFisico } from './src/model/ProdutoFisico';
+import { ProdutoController } from './src/controller/ProdutoController';
 
 export function main(){
 
+    let produtos: ProdutoController = new ProdutoController();
 
-    let opcao: number;
 
+    let opcao, id, numero, preco: number;
+    let nome, categoria, material: string;
+    const tiposProdutos = ['Produto Físico'];
 
     while (true){
 
@@ -37,26 +41,82 @@ export function main(){
             
             case 1:
                  console.log("\n\nCriar cadastro\n\n");
+
+                 id = produtos.gerarId();
+
+                 console.log("Digite o Nome do Produto: ");
+                 nome = readlinesync.question("");
+
+                 console.log("Digite o Preco do Produto (R$): ");
+                 preco = readlinesync.questionFloat("");
+
+                 console.log("Digite a Categoria do Produto: ");
+                 categoria = readlinesync.question("");
+
+                 console.log("Digite o Material do Produto: ");
+                 material = readlinesync.question("");
+
+                 produtos.cadastrar
+                 (new ProdutoFisico(id, nome, preco, categoria, material));
+
+
+                 keyPress()
                  break;
                  
             case 2:
                  console.log("\n\nListar todos os produtos\n\n");
+                 produtos.listarProdutos();
+                 keyPress()
                  break;
 
             case 3:
                  console.log("\n\nBuscar produto\n\n");
+                 console.log("Digite o ID do Produto: ");
+                 id = readlinesync.questionInt("");
+                 produtos.procurarporId(id);
+                 keyPress()
                  break;     
 
             case 4:
                  console.log("\n\nAtualizar produto\n\n");
-                 break;   
+                 console.log("Digite o ID do Produto: ");
+                 id = readlinesync.questionInt("");
 
+                 let produto = produtos.buscarNoArray(id);
+
+                 if (produto != null) {
+
+                    console.log("Digite o Nome do Produto: ");
+                    nome = readlinesync.question("");
+
+                    console.log("Digite o Preco do Produto (R$): ");
+                    preco = readlinesync.questionFloat("");
+
+                    console.log("Digite a Categoria do Produto: ");
+                    categoria = readlinesync.question("");
+
+                    console.log("Digite o Material do Produto: ");
+                    material = readlinesync.question("");
+
+                    produtos.atualizar(new ProdutoFisico(id, nome, preco, categoria, material));
+
+                 } else {
+                    console.log("\n/O Produto com o ID: " + id + " não foi encontrado!");
+                 }
+                 keyPress()
+                 break;   
+                
             case 5:
                  console.log("\n\nDeletar produto\n\n");
+                 console.log("\nDigite o ID do Produto: ");
+                 id = readlinesync.questionInt("");
+                 produtos.deletar(id);
+                 keyPress()
                  break;   
 
             default:
                  console.log("\nTente novamente! Digite uma opção válida!\n");
+                 keyPress()
                  break;     
 
         }
